@@ -4,6 +4,8 @@ const { createConnection } = require('./src/database/dbConnection');
 const metodos = require('./src/routes/MetodosPago');
 const app = express();
 const usuarios = require('./src/routes/Usuarios')
+const tarjetas = require('./src/routes/Tarjetas')
+const buroCredito = require('./src/routes/BuroCredito')
 const PORT = 3000;
 
 
@@ -20,8 +22,8 @@ app.use("/user",usuarios);
 app.use("/metodos",metodos);
 
 // tarjeta de Codeway
-app.use("/tarjetas",metodos);
+app.use("/tarjetas",tarjetas);
 
 
-//ingreso de la base de datos de Moffin
-app.use("/buro-credito",metodos);
+//ingreso de los datos de Moffin
+app.use("/buro-credito",buroCredito);
