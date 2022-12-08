@@ -2,6 +2,11 @@ const mysql = require('mysql');
 const { dbConnectionObject } = require('../utils/const');
 
 
-module.exports.createConnection = ()=>{
-    return mysql.createConnection(dbConnectionObject);
-}
+const connection = mysql.createConnection(dbConnectionObject);
+
+connection.connect((err)=>{
+if (err) throw err;
+console.log('Conectado a la base de datos');
+})
+
+module.exports =  connection;

@@ -1,5 +1,4 @@
 const { v4: uuidv4 } = require('uuid');
-
 const queryDB = (statement, connection, callback) => {
     connection.query(statement, (err, res) => {
         if (err){
